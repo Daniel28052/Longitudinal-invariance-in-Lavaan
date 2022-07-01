@@ -5,10 +5,8 @@ library(semTools)
 library(tidyverse)
 library(SBSDiff)
 
-##################################################################################
-################################# QASIM long inv #################################
-##################################################################################
-data <- read_sav("D:/Research/Vasilis Stavropoulos/Qasim/DATA[57593].sav")
+
+data <- read_sav("Your dataset")
 
 ##################################################################################
 ############### Testing GOF for base model at Time point 1 #######################
@@ -141,7 +139,7 @@ summary(fit_metric, standardized = T, fit.measures = T, rsq = T)
          #node.width = 1, asize = 3, edge.label.cex = 0.75, fade = F)
 
 ################################################################################
-####### Compare Chi square values between configural and metric models #########
+####### Compare GOF indices between configural and metric models ###############
 ################################################################################
 
 c0 <- fit_config@Fit@test[["scaled.shifted"]][["scaling.factor"]]
@@ -284,7 +282,7 @@ summary(fit_scalar, standardized = T, fit.measures = T, rsq = T)
 
       
 ################################################################################
-####### Compare Chi square values between metric and scalar models #############
+########### Compare GOF indices between metric and scalar models ###############
 ################################################################################
 
 c0 <- fit_metric@Fit@test[["scaled.shifted"]][["scaling.factor"]]
